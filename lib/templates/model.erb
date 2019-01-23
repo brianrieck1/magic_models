@@ -5,7 +5,7 @@ class <%= model_name %> < <%= base_class %>
 <% associations.each do |association| %>
   <%= association.macro %> :<%= association.name %>,
     class_name: <%= association.class_name.inspect %>,
-    foreign_key: :<%= association.foreign_key %>,
+    foreign_key: :<%= association.foreign_key%>, dependent: :destroy,
     primary_key: :<%= association.primary_key %>
 <% end %>
 
