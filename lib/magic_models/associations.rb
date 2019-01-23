@@ -10,7 +10,7 @@ module MagicModels
       end
 
       def name
-        @foreign_key.sub(/_id$/, '').singularize
+        @foreign_key.sub(/id$/, '').singularize
       end
 
       def macro
