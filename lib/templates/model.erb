@@ -1,13 +1,6 @@
 class <%= model_name %> < <%= base_class %>
   self.table_name = <%= name.inspect %>
   <%= "self.primary_key = :#{primary_key}" unless primary_key.nil? %>
-                                         
-<% associations.each do |association| %>
-  <%= association.macro %> :<%= association.name %>,
-    class_name: <%= association.class_name.inspect %>,
-    foreign_key: :<%= association.foreign_key%>, dependent: :destroy,
-    primary_key: :<%= association.primary_key %>
-<% end %>
 
 <% appends.each do |append| %>
   <%= append %>
